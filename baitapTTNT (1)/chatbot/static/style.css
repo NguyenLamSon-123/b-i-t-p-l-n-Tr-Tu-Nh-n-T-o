@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: url("ai_bg.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Hộp chat */
+.chat-box {
+    width: 420px;
+    max-width: 95%;
+    height: 600px;
+    background: #fff;
+    margin: 40px auto;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+    background: #10a37f;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* Vùng tin nhắn */
+.messages {
+    padding: 15px;
+    flex: 1;
+    overflow-y: auto;
+    background: #fafafa;
+}
+
+/* Bong bóng chat */
+.message {
+    padding: 10px 14px;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    max-width: 80%;
+    line-height: 1.4;
+    font-size: 14px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.bot {
+    background: #f1f1f1;
+    color: #333;
+    align-self: flex-start;
+}
+
+.user {
+    background: #10a37f;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Hiệu ứng typing */
+.typing {
+    padding: 0 15px;
+    font-style: italic;
+    color: #888;
+    display: none;
+}
+
+/* Input */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.chat-input input:focus {
+    border-color: #10a37f;
+}
+
+.chat-input button {
+    background: #10a37f;
+    color: white;
+    border: none;
+    padding: 0 18px;
+    margin-left: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.chat-input button:hover {
+    background: #0d8a6a;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot Sinh Viên</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+
+<div class="chat-box">
+    <div class="chat-header">🎓 Chatbot Sinh Viên</div>
+
+    <div class="messages">
+    {% if question %}
+    <div class="message user">{{ question }}</div>
+    {% endif %}
+
+    {% if reply %}
+    <div class="message bot" id="botReply" data-text="{{ reply }}"></div>
+    {% else %}
+    <div class="message bot">Xin chào! Bạn cần hỏi gì?</div>
+    {% endif %}
+</div>
+
+    <div class="typing" id="typing">🤖 Chatbot đang gõ...</div>
+
+    <form method="post" class="chat-input">
+        <input type="text" name="question" placeholder="Nhập câu hỏi..." required>
+        <button type="submit">➤</button>
+    </form>
+</div>
+
+<script>
+    const replyBox = document.getElementById("botReply");
+    const typing = document.getElementById("typing");
+
+    if (replyBox) {
+        const text = replyBox.getAttribute("data-text");
+        replyBox.innerHTML = "";
+        typing.style.display = "block";
+
+        let i = 0;
+        setTimeout(() => {
+            typing.style.display = "none";
+            const interval = setInterval(() => {
+                replyBox.innerHTML += text.charAt(i);
+                i++;
+                if (i >= text.length) clearInterval(interval);
+            }, 25);
+        }, 700);
+    }
+</script>
+
+</body>
+</html>
