@@ -1,2 +1,2 @@
-# b-i-t-p-l-n-Tr-Tu-Nh-n-T-o
+## BaiTapLonTriTueNhanTao
 nguyễn lam sơn_K225480106076
